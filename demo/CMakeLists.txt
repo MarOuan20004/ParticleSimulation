@@ -1,0 +1,15 @@
+add_executable(demo_tp1_trace demo_tp1_trace.cxx)
+
+add_executable(demo_tp1_euler demo_tp1_euler.cxx)
+
+add_executable(demo_tp2_solar demo_tp2_solar.cxx)
+target_link_libraries(demo_tp2_solar particules)
+
+add_executable(demo_tp3_collections demo_tp3_collections.cxx)
+target_link_libraries(demo_tp3_collections particules)
+
+add_executable(demo_tp4_collision demo_tp4_collision.cxx)
+target_link_libraries(demo_tp4_collision particules)
+
+add_executable(demo_tp6_boundary demo_tp6_boundary.cxx)
+target_link_libraries(demo_tp6_boundary particules)

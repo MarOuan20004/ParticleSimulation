@@ -1,0 +1,73 @@
+# ==============================================================================
+# Git Ignore Configuration - ParticleSimulation C++ Project
+# ==============================================================================
+
+# Build directories
+build/
+build-*/
+cmake-build-*/
+out/
+bin/
+lib/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+CMakeDoxygenDefaults.cmake
+CMakeDoxyfile.in
+compile_commands.json
+
+# CTest / Testing outputs
+Testing/
+
+# Object files & compiled libraries
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+
+# Simulation outputs (ParaView / VTK formats)
+*.vtu
+*.vtk
+*.vtp
+*.pvd
+*.pvtu
+*.dat
+*.out
+
+# Profiling and memory analysis
+gmon.out
+vgcore.*
+valgrind*.log
+*.prof
+*.gcda
+*.gcno
+*.gcov
+
+# Doxygen generated documentation
+doc/html/
+doc/latex/
+Doxyfile
+
+# IDE and Editor configurations
+.idea/
+.vscode/
+.cache/
+.clangd/
+*.swp
+*.swo
+*~
+*.bak
+*.orig
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini

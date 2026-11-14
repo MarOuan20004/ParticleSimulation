@@ -1,0 +1,43 @@
+name: Documentation Verification
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'include/**'
+      - 'src/**'
+      - 'doc/**'
+      - 'README.md'
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'include/**'
+      - 'src/**'
+      - 'doc/**'
+      - 'README.md'
+
+jobs:
+  doxygen:
+    name: Build Doxygen Documentation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Doxygen and Graphviz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz
+
+      - name: Configure CMake with Documentation enabled
+        run: |
+          cmake -B build -DBUILD_DOCS=ON -DBUILD_TESTING=OFF -DBUILD_DEMOS=OFF
+
+      - name: Build Doxygen documentation
+        run: |
+          cmake --build build --target doc
+
+      - name: Verify generated HTML artifacts
+        run: |
+          test -f build/doc/html/index.html || test -f doc/html/index.html

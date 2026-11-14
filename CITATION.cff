@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software in your research or course work, please cite it as below."
+title: "ParticleSimulation: High-Performance C++ Particle Simulation Library"
+version: 1.0.0
+date-released: 2026-05-07
+authors:
+  - family-names: "Hajjy"
+    given-names: "Marwane"
+    affiliation: "Grenoble INP - Ensimag, Univ. Grenoble Alpes"
+    email: "marwane.hajjy@grenoble-inp.org"
+  - family-names: "El Hadari"
+    given-names: "Mohamed"
+    affiliation: "Grenoble INP - Ensimag, Univ. Grenoble Alpes"
+    email: "mohamed.el-hadari@grenoble-inp.org"
+repository-code: "https://github.com/marwane-hajjy/ParticleSimulation"
+keywords:
+  - "particle-simulation"
+  - "molecular-dynamics"
+  - "n-body-simulation"
+  - "stormer-verlet"
+  - "lennard-jones"
+  - "domain-decomposition"
+  - "vtk"
+  - "cpp17"
+license: "MIT"

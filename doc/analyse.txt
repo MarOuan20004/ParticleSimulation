@@ -1,0 +1,141 @@
+
+ Analyse et Conception — Simulation de Particules
+ C++ pour les Mathématiques Appliquées — ENSIMAG MMIS 2A
+
+
+---------1. DIAGRAMME DE CAS D'UTILISATION
+
+
+Acteur principal : Utilisateur (chercheur / étudiant)
+
+Cas d'utilisation :
+  [CU1] Configurer une simulation
+    - Choisir le type de force (gravitationnelle / Lennard-Jones)
+    - Définir les paramètres (ε, σ, rcut, dt, tend)
+    - Choisir les conditions aux limites
+    - Définir les particules initiales
+
+  [CU2] Lancer une simulation
+    - Exécuter l'algorithme de Störmer-Verlet
+    - Calculer les forces d'interaction
+    - Appliquer les conditions aux limites
+    - Sauvegarder les résultats (VTK / texte)
+
+  [CU3] Visualiser les résultats
+    - Ouvrir les fichiers VTK dans Paraview
+    - Analyser les trajectoires
+
+  [CU4] Tester le code
+    - Exécuter les tests unitaires (Google Test)
+    - Vérifier la cohérence des résultats
+
+  [CU5] Générer la documentation
+    - Exécuter 'make doc' pour Doxygen
+
+
+-------2. DIAGRAMME DE SÉQUENCE (simulation)
+
+
+Utilisateur → main() : configurer paramètres
+main() → Univers : créer univers
+main() → Univers : ajouter particules
+main() → Univers : initialiser grille
+main() → Univers : simuler(dt, tend)
+
+  loop [t < tend]
+    Univers → Particule : updatePosition(dt)
+    Univers → Particule : sauvegarderForce()
+    Univers → Univers : appliquerConditionsLimites()
+    Univers → Univers : mettreAJourCellules()
+    Univers → Univers : calculerForcesGrille()
+      loop [pour chaque cellule]
+        loop [pour chaque paire (i,j)]
+          Univers → Particule_i : ajouterForce(F_ij)
+          Univers → Particule_j : ajouterForce(-F_ij)
+        end
+      end
+    Univers → Particule : updateVitesse(dt)
+    alt [iteration % rescaleInterval == 0]
+      Univers → Univers : rescaleVitesses()
+    end
+    alt [iteration % outputInterval == 0]
+      Univers → Univers : ecrireVTK()
+    end
+  end
+
+
+---------------3. DIAGRAMME D'ÉTATS-TRANSITIONS
+
+
+[Initialisé] → [Particules ajoutées] → [Grille construite]
+     → [Forces calculées] → [Simulation en cours]
+           ↺ (boucle temporelle)
+     → [Simulation terminée] → [Résultats sauvegardés]
+
+
+---------------4. DIAGRAMME DE CLASSES D'ANALYSE
+
+
++-------------------+
+|     Vecteur        |
++-------------------+
+| - m_x : double    |
+| - m_y : double    |
+| - m_z : double    |
++-------------------+
+| + norme()          |
+| + dot()            |
+| + cross()          |
+| + operator+,-,*,/ |
++-------------------+
+
++-------------------+         +-------------------+
+|    Particule       |◇-----→|     Vecteur        |
++-------------------+         +-------------------+
+| - m_position       |
+| - m_vitesse        |
+| - m_force          |
+| - m_forceOld       |
+| - m_masse          |
+| - m_id             |
+| - m_categorie      |
++-------------------+
+| + updatePosition() |
+| + updateVitesse()  |
+| + ajouterForce()   |
+| + energieCinetique()|
++-------------------+
+
++-------------------+
+|    Cellule         |
++-------------------+
+| - m_index          |
+| - m_particules[]   |
+| - m_voisines[]     |
++-------------------+
+| + ajouterParticule()|
+| + vider()          |
++-------------------+
+
++-------------------+         +-------------------+
+|    Univers         |◆-----→|    Particule       |
+|                    |◆-----→|    Cellule         |
++-------------------+         +-------------------+
+| - m_dimension      |
+| - m_longueurs[]    |
+| - m_rcut           |
+| - m_epsilon, sigma |
+| - m_typeForce      |
+| - m_condLimite     |
++-------------------+
+| + simuler()        |
+| + calculerForces() |
+| + ecrireVTK()      |
+| + appliquerCL()    |
++-------------------+
+
+Relations :
+  Univers ◆→ Particule (composition, 1..*)
+  Univers ◆→ Cellule (composition, 0..*)
+  Particule ◇→ Vecteur (agrégation, position, vitesse, force)
+

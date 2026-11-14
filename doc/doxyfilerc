@@ -1,0 +1,31 @@
+# Doxyfile configuration for ParticleSimulation
+# Génère la documentation dans doc/html/
+
+PROJECT_NAME           = "Simulation de Particules"
+PROJECT_NUMBER         = "1.0"
+PROJECT_BRIEF          = "C++ pour les Mathématiques Appliquées — ENSIMAG MMIS 2A"
+
+OUTPUT_DIRECTORY       = @CMAKE_CURRENT_BINARY_DIR@
+INPUT                  = @CMAKE_SOURCE_DIR@/include @CMAKE_SOURCE_DIR@/src
+RECURSIVE              = YES
+FILE_PATTERNS          = *.hxx *.cxx *.txx
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+
+GENERATE_LATEX         = NO
+GENERATE_XML           = NO
+
+HAVE_DOT               = NO
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+
+OPTIMIZE_OUTPUT_FOR_C  = NO
+OPTIMIZE_FOR_FORTRAN   = NO
+
+QUIET                  = YES
+WARNINGS               = YES

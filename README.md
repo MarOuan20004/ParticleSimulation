@@ -1,6 +1,6 @@
 # Simulation de Particules — C++ pour les Mathématiques Appliquées
 
-[![CI](https://github.com/marwane-hajjy/ParticleSimulation/actions/workflows/ci.yml/badge.svg)](https://github.com/marwane-hajjy/ParticleSimulation/actions/workflows/ci.yml)
+[![CI](https://github.com/MarOuan20004/ParticleSimulation/actions/workflows/ci.yml/badge.svg)](https://github.com/MarOuan20004/ParticleSimulation/actions/workflows/ci.yml)
 [![C++ Standard](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://en.cppreference.com/w/cpp/17)
 [![CMake](https://img.shields.io/badge/CMake-3.16+-064F8C.svg?logo=cmake)](https://cmake.org/)
 [![Tests](https://img.shields.io/badge/GoogleTest-43%20passed-brightgreen.svg)](https://github.com/google/googletest)

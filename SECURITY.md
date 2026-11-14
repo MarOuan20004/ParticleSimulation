@@ -14,7 +14,7 @@ La sécurité et la fiabilité du code sont des priorités fondamentales. Si vou
 1. **Ne pas ouvrir d'issue publique.**
 2. Envoyer un rapport détaillé par courriel aux mainteneurs :
    - `marwane.hajjy@grenoble-inp.org`
-   - `mohamed.el-hadari@grenoble-inp.org`
+   - `marouane.el-hadari@grenoble-inp.org`
 3. Inclure dans votre rapport :
    - Description précise de la vulnérabilité ou de l'anomalie mémoire.
    - Étapes reproductibles, script minimal ou test unitaire mettant en évidence le problème.

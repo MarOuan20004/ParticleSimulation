@@ -9,7 +9,7 @@
 
 **Grenoble INP - Ensimag**  
 Filière MMIS (Modélisation Mathématique, Image et Simulation) — 2ème Année — Printemps 2026  
-**Auteurs :** Mohamed El Hadari (`elhadarm`), Marwane Hajjy (`hajjym`)
+**Auteurs :** Marouane El Hadari (`elhadarm`), Marwane Hajjy (`hajjym`)
 
 ---
 
@@ -443,7 +443,7 @@ Chaque étape du travail pratique fait l'objet d'un rapport méthodologique dét
 
 ### Auteurs
 
-- **Mohamed El Hadari** — Grenoble INP - Ensimag (`elhadarm`)
+- **Marouane El Hadari** — Grenoble INP - Ensimag (`elhadarm`)
 - **Marwane Hajjy** — Grenoble INP - Ensimag (`hajjym`)
 
 ### Licence

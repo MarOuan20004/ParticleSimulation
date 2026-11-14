@@ -9,9 +9,9 @@ authors:
     affiliation: "Grenoble INP - Ensimag, Univ. Grenoble Alpes"
     email: "marwane.hajjy@grenoble-inp.org"
   - family-names: "El Hadari"
-    given-names: "Mohamed"
+    given-names: "Marouane"
     affiliation: "Grenoble INP - Ensimag, Univ. Grenoble Alpes"
-    email: "mohamed.el-hadari@grenoble-inp.org"
+    email: "marouane.el-hadari@grenoble-inp.org"
 repository-code: "https://github.com/marwane-hajjy/ParticleSimulation"
 keywords:
   - "particle-simulation"
